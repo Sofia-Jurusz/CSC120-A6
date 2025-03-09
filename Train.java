@@ -6,6 +6,7 @@ public class Train {
     private Engine engine;
     private int passengerCapacity;
     private String trainsName;
+    private int nCars;
 
 
     /**
@@ -21,6 +22,7 @@ public class Train {
         this.cars = new ArrayList<Car>();
         this.trainsName = trainsName;
         this.passengerCapacity = passengerCapacity;
+        this.nCars = nCars;
         for (int i = 0; i <nCars; i++){
             Car newCar = new Car(passengerCapacity);
             cars.add(newCar);
@@ -76,9 +78,17 @@ public class Train {
         System.out.println(this.trainsName +"'s Manifest");
         System.out.println("----------------------------");
         for (int i = 0; i < cars.size();i++){
-            System.out.println("Car " + i +":");
+            System.out.println("Car " + (i+1) +":");
             cars.get(i).printManifest();
         }
+    }
+
+    public int getCarNumber(){
+        return this.nCars;
+    }
+
+    public ArrayList<Car> getCarsList(){
+        return this.cars;
     }
 
     public static void main(String[] args) {

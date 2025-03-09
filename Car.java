@@ -25,6 +25,13 @@ public class Car {
 
     }
     /**
+     * Accessor for the passengers on a singular car
+     * @return arraylist of the passengers on the car
+     */
+    public ArrayList<Passenger> getManifest(){
+        return this.Manifest;
+    }
+    /**
      * Accessor for the Car's seats remaining
      * @return seatsRemaining The spaces a Passenger could still occupy
      */
@@ -138,6 +145,8 @@ public class Car {
 
         System.out.println("Cleo is getting on the train");
         System.out.println(myCar.addPassenger(Cleo));
+
+        
     }
 
 }
