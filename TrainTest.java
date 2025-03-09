@@ -5,11 +5,13 @@ import org.junit.Test;
 
 public class TrainTest {
 
-    // @BeforeClass
-    //     public void newTrain(){
-            
-    //     }
+
     // Engine Tests
+
+    /**
+     * Tests if the engine initializes with the correct fuel type and max fuel
+     * if the engine returns the correct fuel and max capacity, the test passes
+     */
     @Test
     public void testEngineConstructor() {
         Train amtrak = new Train(FuelType.ELECTRIC, 100, 5, 4, "amtrack valley flier");
@@ -22,6 +24,10 @@ public class TrainTest {
         //does engine initialize correctly with fuel type and capacity?
     }
 
+    /** 
+     * Tests that the go method from the engine class works
+     * If the go method sutracts fuel from the current fuel, the test passes
+     */
     @Test
     public void testEngineGo() {
         Train amtrak = new Train(FuelType.ELECTRIC, 100, 5, 4, "amtrack valley flier");
@@ -71,7 +77,7 @@ public class TrainTest {
     // Passenger Tests
     /**
      * Tests if a Passenger can successfully board an empty car
-     * If they board the car, it passes the test
+     * If they board the car, the test passes
      */
     @Test
     public void testPassengerBoardCarWithSpace() {
