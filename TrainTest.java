@@ -47,8 +47,8 @@ public class TrainTest {
         Train amtrak = new Train(FuelType.ELECTRIC, 100, 5, 4, "amtrack valley flier");
         Car carone = amtrak.getCar(0);
         int zero_passengers = carone.getseatsRemaining();
-        Passenger Maya = new Passenger("Maya");
-        carone.addPassenger(Maya);
+        Passenger maya = new Passenger("Maya");
+        carone.addPassenger(maya);
         assertTrue(carone.getseatsRemaining()<= zero_passengers);
 
     }
@@ -61,12 +61,12 @@ public class TrainTest {
     public void testCarRemovePassenger() {
         Train amtrak = new Train(FuelType.ELECTRIC, 100, 5, 4, "amtrack valley flier");
         Car carone = amtrak.getCar(0);
-        Passenger Maya = new Passenger("Maya");
-        carone.addPassenger(Maya);
+        Passenger maya = new Passenger("Maya");
+        carone.addPassenger(maya);
         int one_pass = carone.getseatsRemaining();
-        carone.removePassenger(Maya);
+        carone.removePassenger(maya);
         if (one_pass <= carone.getseatsRemaining()){
-            assertFalse(carone.removePassenger(Maya));
+            assertFalse(carone.removePassenger(maya));
         } else{
             fail();
         }
@@ -83,15 +83,17 @@ public class TrainTest {
     public void testPassengerBoardCarWithSpace() {
         Train amtrak = new Train(FuelType.ELECTRIC, 100, 5, 4, "amtrack valley flier");
         Car carone = amtrak.getCar(0);
-        Passenger Maya = new Passenger("Maya");
-        Maya.boardCar(carone);
+        Passenger maya = new Passenger("Maya");
+        maya.boardCar(carone);
         int Manifest_size = carone.getManifest().size();
-        for (int i = 0; i < Manifest_size; i++)
-            if (carone.getManifest().get(i)== Maya) {
+        for (int i = 0; i < Manifest_size; i++) {
+            if (carone.getManifest().get(i)== maya) {
                 assertTrue(true);
             }else {
                 fail();
             }
+        }
+            
         
         //can passenger board car with room? 
     }
@@ -104,10 +106,10 @@ public class TrainTest {
     public void testPassengerBoardCarFull() {
         Train amtrak = new Train(FuelType.ELECTRIC, 100, 5, 1, "amtrack valley flier");
         Car carone = amtrak.getCar(0);
-        Passenger Maya = new Passenger("Maya");
-        Maya.boardCar(carone);
-        Passenger Kate = new Passenger("Kate");
-        assertFalse(carone.addPassenger(Kate));
+        Passenger maya = new Passenger("Maya");
+        maya.boardCar(carone);
+        Passenger kate = new Passenger("Kate");
+        assertFalse(carone.addPassenger(kate));
         
         
     }
@@ -134,13 +136,13 @@ public class TrainTest {
         Car carone = amtrak.getCar(0);
         Car cartwo = amtrak.getCar(1);
 
-        Passenger Maya = new Passenger("Maya");
-        Passenger Kate = new Passenger("Kate");
-        Maya.boardCar(carone);
-        Kate.boardCar(cartwo);
+        Passenger maya = new Passenger("Maya");
+        Passenger kate = new Passenger("Kate");
+        maya.boardCar(carone);
+        kate.boardCar(cartwo);
     
         if (amtrak.getMaxCapacity() - amtrak.seatsRemaining() == 2){
-            Kate.getOffCar(cartwo);
+            kate.getOffCar(cartwo);
             assertTrue(amtrak.getMaxCapacity() - amtrak.seatsRemaining() == 1);
         } else {
             fail();
@@ -169,10 +171,10 @@ public class TrainTest {
         Car carone = amtrak.getCar(0);
         Car cartwo = amtrak.getCar(1);
 
-        Passenger Maya = new Passenger("Maya");
-        Passenger Kate = new Passenger("Kate");
-        Maya.boardCar(carone);
-        Kate.boardCar(cartwo);
+        Passenger maya = new Passenger("Maya");
+        Passenger kate = new Passenger("Kate");
+        maya.boardCar(carone);
+        kate.boardCar(cartwo);
 
         if (amtrak.getCarsList().get(1) == cartwo){
             assertTrue(true);

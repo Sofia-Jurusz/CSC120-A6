@@ -3,7 +3,7 @@ public class Car {
     //Attributes
     private int capacity;
     private int seatsRemaining;
-    private ArrayList<Passenger> Manifest;  
+    private ArrayList<Passenger> manifest;  
     
     /**
      * Constructor for Car
@@ -11,7 +11,7 @@ public class Car {
      */
     public Car(int capacity){ //, ArrayList<String> Manifest
         this.capacity = capacity;
-        this.Manifest = new ArrayList<Passenger>(capacity);
+        this.manifest = new ArrayList<Passenger>(capacity);
         this.seatsRemaining = capacity;
         
 
@@ -29,7 +29,7 @@ public class Car {
      * @return arraylist of the passengers on the car
      */
     public ArrayList<Passenger> getManifest(){
-        return this.Manifest;
+        return this.manifest;
     }
     /**
      * Accessor for the Car's seats remaining
@@ -46,20 +46,20 @@ public class Car {
      * @return False if the addition was unsuccesful
      */
     public Boolean addPassenger(Passenger p){
-        int Manifest_size = this.Manifest.size();
-        if (Manifest_size == this.capacity) {
+        int manifest_size = this.manifest.size();
+        if (manifest_size == this.capacity) {
             System.out.println("This car is full!");
             return false;
         }
         else {
-            for (int i = 0; i < Manifest_size; i++) {
-                if (p == this.Manifest.get(i)){
+            for (int i = 0; i < manifest_size; i++) {
+                if (p == this.manifest.get(i)){
                     System.out.println(p.getName() + " is already on this car!");
                     return false;
                 }   
 
             }
-            this.Manifest.add(p);
+            this.manifest.add(p);
             this.seatsRemaining = this.seatsRemaining - 1;
             return true;
          }
@@ -73,15 +73,15 @@ public class Car {
      * @return False if the removing was unsuccesful
      */
     public Boolean removePassenger(Passenger p){
-        int Manifest_size = this.Manifest.size();
-        if (Manifest_size == 0) {
+        int manifest_size = this.manifest.size();
+        if (manifest_size == 0) {
             System.out.println("This car is empty! There is no one to remove!");
             return false;
         }
         else {
-            for (int i = 0; i < Manifest_size; i++) {
-                if (p == this.Manifest.get(i)){
-                    this.Manifest.remove(p);
+            for (int i = 0; i < manifest_size; i++) {
+                if (p == this.manifest.get(i)){
+                    this.manifest.remove(p);
                     this.seatsRemaining = this.seatsRemaining + 1;
                     return true;
                 }   
@@ -99,13 +99,13 @@ public class Car {
      * which contains a list of Passengers on board
      */
     public void printManifest(){
-        if (this.Manifest.size() == 0){
+        if (this.manifest.size() == 0){
             System.out.println("This car is empty!");
             return;
         }
         System.out.println("****");
-        for (int i = 0; i < this.Manifest.size(); i++){
-            Passenger passenger = this.Manifest.get(i);
+        for (int i = 0; i < this.manifest.size(); i++){
+            Passenger passenger = this.manifest.get(i);
             String name = passenger.getName();
             System.out.println(name);
         }
@@ -114,37 +114,37 @@ public class Car {
 
     public static void main(String[] args) {
         Car myCar = new Car(10);
-        Passenger Sofia = new Passenger("Sofia");
+        Passenger sofia = new Passenger("Sofia");
         System.out.println("This is an empty car");
         System.out.println("Capacity: "+ myCar.getCapacity());
         System.out.println("Seats Remaining: " + myCar.getseatsRemaining());
         myCar.printManifest();
 
-        System.out.println("Now we are adding a passenger: "+ Sofia.getName());
-        myCar.addPassenger(Sofia);
+        System.out.println("Now we are adding a passenger: "+sofia.getName());
+        myCar.addPassenger(sofia);
         System.out.println("Capacity: "+ myCar.getCapacity());
         System.out.println("Seats Remaining: " + myCar.getseatsRemaining());
         myCar.printManifest();
 
-        Passenger Cleo = new Passenger("Cleo");
-        System.out.println("Now we are adding a passenger: "+ Cleo.getName());
-        myCar.addPassenger(Cleo);
+        Passenger cleo = new Passenger("Cleo");
+        System.out.println("Now we are adding a passenger: "+ cleo.getName());
+        myCar.addPassenger(cleo);
         System.out.println("Capacity: "+ myCar.getCapacity());
         System.out.println("Seats Remaining: " + myCar.getseatsRemaining());
         myCar.printManifest();
 
         System.out.println("Sofia is going to leave the train");
-        myCar.removePassenger(Sofia);
+        myCar.removePassenger(sofia);
         System.out.println("Capacity: "+ myCar.getCapacity());
         System.out.println("Seats Remaining: " + myCar.getseatsRemaining());
         myCar.printManifest();
 
-        Passenger Maya = new Passenger("Maya");
+        Passenger maya = new Passenger("Maya");
         System.out.println("Maya is going to leave the train");
-        System.out.println(myCar.removePassenger(Maya));
+        System.out.println(myCar.removePassenger(maya));
 
         System.out.println("Cleo is getting on the train");
-        System.out.println(myCar.addPassenger(Cleo));
+        System.out.println(myCar.addPassenger(cleo));
 
         
     }

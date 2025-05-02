@@ -43,11 +43,11 @@ public class Passenger {
 
     public static void main(String[] args) {
         Car carOne = new Car(10);
-        Passenger Walter = new Passenger("Walter");
-        Walter.boardCar(carOne);
+        Passenger walter = new Passenger("Walter");
+        walter.boardCar(carOne);
         carOne.printManifest();
-        Walter.getOffCar(carOne);
+        walter.getOffCar(carOne);
         carOne.printManifest();
-        Walter.getOffCar(carOne);
+        walter.getOffCar(carOne);
     }
 }

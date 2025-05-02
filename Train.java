@@ -95,35 +95,35 @@ public class Train {
         Train amtrak = new Train(FuelType.ELECTRIC,200,5,4,"Amtrak Valley Flier");
         System.out.println(amtrak.getEngine());
         Car cartwo = amtrak.getCar(1);
-            Passenger Sofia = new Passenger("Sofia");
-            cartwo.addPassenger(Sofia);
-            Passenger Maya = new Passenger("Maya");
-            cartwo.addPassenger(Maya);
+            Passenger sofia = new Passenger("Sofia");
+            cartwo.addPassenger(sofia);
+            Passenger maya = new Passenger("Maya");
+            cartwo.addPassenger(maya);
 
-            Passenger Walter = new Passenger("Walter");
-            cartwo.addPassenger(Walter);
+            Passenger walter = new Passenger("Walter");
+            cartwo.addPassenger(walter);
 
-            Passenger Susan = new Passenger("Susan");
-            cartwo.addPassenger(Susan);
+            Passenger susan = new Passenger("Susan");
+            cartwo.addPassenger(susan);
 
         Car carOne = amtrak.getCar(0);
 
-            Passenger Kate = new Passenger("Kate");
-            carOne.addPassenger(Kate);
+            Passenger kate = new Passenger("Kate");
+            carOne.addPassenger(kate);
 
-            Passenger Cleo = new Passenger("Cleo");
-            carOne.addPassenger(Cleo);
+            Passenger cleo = new Passenger("Cleo");
+            carOne.addPassenger(cleo);
 
         Car carFive = amtrak.getCar(4);
 
-            Passenger Lucy = new Passenger("Lucy");
-            carFive.addPassenger(Lucy);
+            Passenger lucy = new Passenger("Lucy");
+            carFive.addPassenger(lucy);
 
-            Passenger Annika = new Passenger("Annika");
-            carFive.addPassenger(Annika);
+            Passenger annika = new Passenger("Annika");
+            carFive.addPassenger(annika);
 
-            Passenger Catherine = new Passenger("Catherine");
-            carFive.addPassenger(Catherine);
+            Passenger catherine = new Passenger("Catherine");
+            carFive.addPassenger(catherine);
 
 
         System.out.println("seats remaining: "+amtrak.seatsRemaining());
